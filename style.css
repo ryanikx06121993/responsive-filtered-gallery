@@ -1,0 +1,93 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  transition: all 0.2s cubic-bezier(0.34, 1.12, 0.68, 1.31);
+  list-style-type: none;
+}
+
+div.gallery {
+  min-height: 100vh;
+  background-color: #eee;
+  padding-bottom: 100px;
+}
+
+div.gallery ul.controlls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+ul.controlls li.buttons {
+  height: 40px;
+  width: 140px;
+  background-color: white;
+  color: #666;
+  font-size: 20px;
+  line-height: 40px;
+  cursor: pointer;
+  margin: 20px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+ul.controlls li.buttons.active {
+  background-color: coral;
+  color: #fff;
+}
+
+div.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+div.img-container a.image {
+  width: 350px;
+  height: 250px;
+
+  overflow: hidden;
+  border: 15px solid white;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+}
+
+div.img-container a.image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: inherit;
+}
+
+div.img-container a.image:hover img {
+  transform: scale(1.4);
+}
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  /* ideally, transition speed should match zoom duration */
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+  opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
